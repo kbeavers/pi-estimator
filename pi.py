@@ -3,9 +3,15 @@ from random import random as r
 from math import pow as p
 from sys import argv
 
+# Use argparse to take command line options and generate help text
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("number", help="number of random points (int)", type=int)
+args = parser.parse_args()
+
 # Make sure number of attempts is given on command line
 assert len(argv) == 2
-attempts = int(argv[1])
+attempts = args.number
 inside = 0
 tries = 0
 
